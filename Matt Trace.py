@@ -21,20 +21,27 @@ print 'normalized = ' + str(n)
 
 #Source position
 source = np.array([3,3,3])
+source_vector = np.array(source-Q)
 print 'Source position = ' + str(source)
 
 #Mult-dimensional array of the points P, Q, and R multiplied element-wise by the normalized normal vector.
+'''
 A = np.array([[(n[0]*P[0]),(n[1]*P[1]),(n[2]*P[2])],
             [(n[0]*Q[0]),(n[1]*Q[1]),(n[2]*Q[2])],
             [(n[0]*R[0]),(n[1]*R[1]),(n[2]*R[2])]])
 B = np.array([-1,-1,-1])
+
 print A
 print B
+'''
+
 #A least square estimation of the solution of the system of equations. Solving the form Ax = B where x = [1/D, 1/D, 1/D]
+'''
 least_square = np.linalg.lstsq(A, B)
 print least_square
-
+'''
 #Parsing the result of the least square estimation to determine the plane constant D.
+'''
 def find_D(lst_sq):
     for row in lst_sq:
         for entry in row:
@@ -43,13 +50,12 @@ def find_D(lst_sq):
                 return D
 
 D = find_D(least_square)
+'''
 
 #Dot product of source position and normalized normal vector.
-dot_product = np.dot(n, source)
+source_distance = np.dot(n, source_vector)
 
-#Calculation of
-source_distance = dot_product + D
 print 'Distance from source to plane = ' + str(source_distance)
 
-source_image = (-1*2*source_distance*n)+source
+source_image = source - (2*source_distance*n)
 print 'Image position = ' + str(source_image)
