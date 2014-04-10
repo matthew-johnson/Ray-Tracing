@@ -29,7 +29,7 @@
       <file leaf-file-name="Matt Trace.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Matt Trace.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="150" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.47477746" vertical-offset="894" max-vertical-offset="1479">
+            <state line="92" column="34" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.6973294" vertical-offset="1312" max-vertical-offset="1649">
               <folding />
             </state>
           </provider>
@@ -326,7 +326,11 @@
       <created>1397107456264</created>
       <updated>1397107456264</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Solved for the point of intersection between the line from image to receiver and the plane PQR.">
+      <created>1397109001526</created>
+      <updated>1397109001526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -342,7 +346,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34690553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34690553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -542,7 +546,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Matt Trace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="150" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.47477746" vertical-offset="894" max-vertical-offset="1479">
+        <state line="92" column="34" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.6973294" vertical-offset="1312" max-vertical-offset="1649">
           <folding />
         </state>
       </provider>

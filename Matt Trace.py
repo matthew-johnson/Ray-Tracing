@@ -61,11 +61,21 @@ print 'Distance from source to plane = ' + str(source_distance)
 image = source - (2*source_distance*n)
 print 'Image position = ' + str(image)
 
+print receiver - image
+print PQ
+print PR
+
+#If the determinant below is = 0, then the three vectors are linearly dependent meaning the line does not intersect the plane and the reflection is not valid.
+check_reflection = np.linalg.det(np.array([receiver - image, PQ, PR]))
+print 'Determinant = ' + str(check_reflection)
+if check_reflection != 0:
+    print 'Valid reflection.'
+
 #Solving for the intersection point of the line from image to reciever and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
 A = np.array([
-    [image[0]-receiver[0], Q[0] - P[0], R[0] - P[0]],
-    [image[1]-receiver[1], Q[1] - P[1], R[1] - P[1]],
-    [image[2]-receiver[2], Q[2] - P[2], R[2] - P[2]]
+    [image[0]-receiver[0], PQ[0], PR[0]],
+    [image[1]-receiver[1], PQ[1], PR[1]],
+    [image[2]-receiver[2], PQ[2], PR[2]]
 ])
 
 B = np.array([
@@ -80,4 +90,4 @@ print intersect_mag
 
 #Intersection point in form Ia + (Ib - Ia)t where Ia is the image position and Ib is the receiver position.
 intersect = image + (receiver - image)*intersect_mag
-print intersect
+print 'Reflection point = ' + str(intersect)
