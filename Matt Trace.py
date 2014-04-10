@@ -6,7 +6,9 @@ import scipy as sp
 #Defining a wall with points
 P = np.array([2,0,10])
 Q = np.array([2,0,0])
-R = np.array([2,5,10])
+R = np.array([4,5,10])
+Wall1 = [P, Q, R]
+
 
 #Creating vectors from the points.
 PQ = np.array(Q-P)
@@ -20,8 +22,8 @@ n = normalv/np.linalg.norm(normalv)
 print 'normalized = ' + str(n)
 
 #Source position
-source = np.array([3,3,3])
-receiver = np.array([5,5,5])
+source = np.array([7,4,4])
+receiver = np.array([-5,-5,20])
 source_vector = np.array(source-Q)
 print 'Source position = ' + str(source)
 
@@ -70,6 +72,8 @@ check_reflection = np.linalg.det(np.array([receiver - image, PQ, PR]))
 print 'Determinant = ' + str(check_reflection)
 if check_reflection != 0:
     print 'Valid reflection.'
+else:
+    print 'Invalid reflection.'
 
 #Solving for the intersection point of the line from image to reciever and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
 A = np.array([
