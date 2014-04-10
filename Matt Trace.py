@@ -61,7 +61,7 @@ print 'Distance from source to plane = ' + str(source_distance)
 image = source - (2*source_distance*n)
 print 'Image position = ' + str(image)
 
-#Solving for the intersection point of the line from image to reciever and the plane PQR.
+#Solving for the intersection point of the line from image to reciever and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
 A = np.array([
     [image[0]-receiver[0], Q[0] - P[0], R[0] - P[0]],
     [image[1]-receiver[1], Q[1] - P[1], R[1] - P[1]],
@@ -72,9 +72,10 @@ B = np.array([
     image[0] - P[0], image[1] - P[1], image[2] - P[2]
 ])
 
-intersect_sol = np.linalg.solve(A, B)
-print intersect_sol
-intersect_mag = intersect_sol[0]
+#Using linalg.solve to solve for the solution vector x from the form Ax = B. x is in the form [t, u, v].
+x = np.linalg.solve(A, B)
+print x
+intersect_mag = x[0]
 print intersect_mag
 
 #Intersection point in form Ia + (Ib - Ia)t where Ia is the image position and Ib is the receiver position.

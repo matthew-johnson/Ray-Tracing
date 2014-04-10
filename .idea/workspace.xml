@@ -29,7 +29,7 @@
       <file leaf-file-name="Matt Trace.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Matt Trace.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="15" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.90340906" vertical-offset="1042" max-vertical-offset="1462">
+            <state line="63" column="150" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.47477746" vertical-offset="894" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
@@ -322,13 +322,18 @@
       <created>1397064017406</created>
       <updated>1397064017406</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Solved for the point of intersection between the line from image to receiver and the plane PQR.">
+      <created>1397107456264</created>
+      <updated>1397107456264</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -337,13 +342,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3457792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34690553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -363,7 +367,8 @@
     </option>
     <MESSAGE value="Managed to find the image position in some test cases." />
     <MESSAGE value="New method for finding the source to wall distance. (Simple dot product)." />
-    <option name="LAST_COMMIT_MESSAGE" value="New method for finding the source to wall distance. (Simple dot product)." />
+    <MESSAGE value="Solved for the point of intersection between the line from image to receiver and the plane PQR." />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved for the point of intersection between the line from image to receiver and the plane PQR." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -537,7 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Matt Trace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="15" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.90340906" vertical-offset="1042" max-vertical-offset="1462">
+        <state line="63" column="150" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.47477746" vertical-offset="894" max-vertical-offset="1479">
           <folding />
         </state>
       </provider>
