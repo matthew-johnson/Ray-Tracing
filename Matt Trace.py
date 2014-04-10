@@ -21,6 +21,7 @@ print 'normalized = ' + str(n)
 
 #Source position
 source = np.array([3,3,3])
+receiver = np.array([5,5,5])
 source_vector = np.array(source-Q)
 print 'Source position = ' + str(source)
 
@@ -57,5 +58,25 @@ source_distance = np.dot(n, source_vector)
 
 print 'Distance from source to plane = ' + str(source_distance)
 
-source_image = source - (2*source_distance*n)
-print 'Image position = ' + str(source_image)
+image = source - (2*source_distance*n)
+print 'Image position = ' + str(image)
+
+#Solving for the intersection point of the line from image to reciever and the plane PQR.
+A = np.array([
+    [image[0]-receiver[0], Q[0] - P[0], R[0] - P[0]],
+    [image[1]-receiver[1], Q[1] - P[1], R[1] - P[1]],
+    [image[2]-receiver[2], Q[2] - P[2], R[2] - P[2]]
+])
+
+B = np.array([
+    image[0] - P[0], image[1] - P[1], image[2] - P[2]
+])
+
+intersect_sol = np.linalg.solve(A, B)
+print intersect_sol
+intersect_mag = intersect_sol[0]
+print intersect_mag
+
+#Intersection point in form Ia + (Ib - Ia)t where Ia is the image position and Ib is the receiver position.
+intersect = image + (receiver - image)*intersect_mag
+print intersect
