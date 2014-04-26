@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled source #
 ###################
 *.com
@@ -35,3 +36,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+=======
+.idea
+>>>>>>> FETCH_HEAD
