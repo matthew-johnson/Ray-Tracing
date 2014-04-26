@@ -2,11 +2,16 @@ __author__ = 'Matt'
 
 import numpy as np
 import scipy as sp
-
+'''
 #Defining a wall with points
 P = np.array([2,0,10])
 Q = np.array([2,0,0])
 R = np.array([4,5,10])
+Wall1 = [P, Q, R]
+'''
+P = np.array([2,1,0])
+Q = np.array([2,1,4])
+R = np.array([2,3,0])
 Wall1 = [P, Q, R]
 
 
@@ -22,8 +27,8 @@ n = normalv/np.linalg.norm(normalv)
 print 'normalized = ' + str(n)
 
 #Source position
-source = np.array([3,4,4])
-receiver = np.array([5,5,5])
+source = np.array([4,2,2])
+receiver = np.array([4,3,2])
 source_vector = np.array(source-Q)
 print 'Source position = ' + str(source)
 
@@ -58,7 +63,7 @@ intersect_mag = x[0]
 print intersect_mag
 
 #Intersection point in form Ia + (Ib - Ia)t where Ia is the image position and Ib is the receiver position.
-intersect = image + (image_v)*intersect_mag
+intersect = image + image_v * intersect_mag
 print 'Reflection point = ' + str(intersect)
 
 #If the determinant below is = 0, then the three vectors are linearly dependent meaning the line does not intersect the plane and the reflection is not valid.
@@ -67,4 +72,4 @@ print 'Distance = ' + str(check_reflection)
 if check_reflection == 0:
     print 'Valid reflection.'
 else:
-    print 'Invalid reflection. Point does not intersect the wall.'
+    print('Invalid reflection. Point does not intersect the wall:    ' + str(check_reflection))
