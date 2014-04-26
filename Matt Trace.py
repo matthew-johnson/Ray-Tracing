@@ -1,19 +1,16 @@
 __author__ = 'Matt'
 
 import numpy as np
-import scipy as sp
 
-'''
 #Defining a wall with points
-P = np.array([2,0,10])
-Q = np.array([2,0,0])
-R = np.array([4,5,10])
+
+P = np.array([0, 0, 0])
+Q = np.array([0, 10, 0])
+R = np.array([10, 0, 0])
 Wall1 = [P, Q, R]
-'''
-P = np.array([2, 1, 0])
-Q = np.array([2, 1, 4])
-R = np.array([2, 3, 0])
-Wall1 = [P, Q, R]
+
+# Integer to define how accurate we want the calc to be. Might need to be adjusted based on units being used like ft vs cm
+round_number = 4
 
 
 #Creating vectors from the points.
@@ -28,8 +25,8 @@ n = normalv / np.linalg.norm(normalv)
 print 'normalized = ' + str(n)
 
 #Source position
-source = np.array([4, 2, 2])
-receiver = np.array([4, 3, 2])
+source = np.array([4, 2, 4])
+receiver = np.array([4, 4, 4])
 source_vector = np.array(source - Q)
 print 'Source position = ' + str(source)
 
@@ -46,7 +43,8 @@ print 'Distance from image to receiver = ' + str(image_v)
 print PQ
 print PR
 
-#Solving for the intersection point of the line from image to reciever and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
+
+#Solving for the intersection point of the line from image to receiver and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
 A = np.array([
     [image_v[0], PQ[0], PR[0]],
     [image_v[1], PQ[1], PR[1]],
@@ -63,16 +61,30 @@ print x
 intersect_mag = x[0]
 print intersect_mag
 
+
+# Alternate solution to intersection point http://mathworld.wolfram.com/Line-PlaneIntersection.html
+top = np.array([[1, 1, 1, 1], [P[0], P[1], P[2], image[0]], [Q[0], Q[1], Q[2], image[1]], [R[0], R[1], R[2], image[2]]])
+bottom = np.array([[1, 1, 1, 0], [P[0], Q[0], R[0], receiver[0] - image[0]], [P[1], Q[1], R[1], receiver[1] - image[1]],
+                   [P[2], Q[2], R[2], receiver[2] - image[2]]])
+t = np.linalg.det(top) / np.linalg.det(bottom)
+print t
+
+intersect_nathan = np.zeros([1, 3])
+print intersect_nathan
+for i in [0, 1, 2]:
+    intersect_nathan[0][i] = round(image[i] + (receiver[i] - image[i]) * t, round_number)
+print('Nathan Intersection: ' + str(intersect_nathan))
+
 #Intersection point in form Ia + (Ib - Ia)t where Ia is the image position and Ib is the receiver position.
-intersect = image + image_v * intersect_mag
-print 'Reflection point = ' + str(intersect)
+intersect_matt = image + image_v * intersect_mag
+print 'Matt Intersection: ' + str(intersect_matt)
 
 #If the determinant below is = 0, then the three vectors are linearly dependent meaning the line does not intersect the plane and the reflection is not valid.
-check_reflection = np.dot(intersect - Q, n)
-print 'Distance = ' + str(check_reflection)
-if check_reflection == 0:
-    print 'Valid reflection.'
-else:
-    print('Invalid reflection. Point does not intersect the wall:    ' + str(check_reflection))
-
-    # Hello
+for intersect in [intersect_matt, intersect_nathan]:
+    print(str(intersect) + ':')
+    check_reflection = np.dot(intersect - Q, n)
+    print 'Distance = ' + str(check_reflection)
+    if check_reflection == 0:
+        print 'Valid reflection.'
+    else:
+        print('Invalid reflection. Point does not intersect the wall:    ' + str(check_reflection))
