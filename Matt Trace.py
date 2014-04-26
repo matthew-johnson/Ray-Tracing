@@ -2,6 +2,7 @@ __author__ = 'Matt'
 
 import numpy as np
 import scipy as sp
+
 '''
 #Defining a wall with points
 P = np.array([2,0,10])
@@ -9,27 +10,27 @@ Q = np.array([2,0,0])
 R = np.array([4,5,10])
 Wall1 = [P, Q, R]
 '''
-P = np.array([2,1,0])
-Q = np.array([2,1,4])
-R = np.array([2,3,0])
+P = np.array([2, 1, 0])
+Q = np.array([2, 1, 4])
+R = np.array([2, 3, 0])
 Wall1 = [P, Q, R]
 
 
 #Creating vectors from the points.
-PQ = np.array(Q-P)
-PR = np.array(R-P)
+PQ = np.array(Q - P)
+PR = np.array(R - P)
 
 #Finding the normal vector of the plane.
 normalv = np.cross(PQ, PR)
 print 'normal vector = ' + str(normalv)
 #Normalization of the normal vector.
-n = normalv/np.linalg.norm(normalv)
+n = normalv / np.linalg.norm(normalv)
 print 'normalized = ' + str(n)
 
 #Source position
-source = np.array([4,2,2])
-receiver = np.array([4,3,2])
-source_vector = np.array(source-Q)
+source = np.array([4, 2, 2])
+receiver = np.array([4, 3, 2])
+source_vector = np.array(source - Q)
 print 'Source position = ' + str(source)
 
 #Dot product of source position and normalized normal vector.
@@ -37,7 +38,7 @@ source_distance = np.dot(n, source_vector)
 
 print 'Distance from source to plane = ' + str(source_distance)
 
-image = source - (2*source_distance*n)
+image = source - (2 * source_distance * n)
 print 'Image position = ' + str(image)
 
 image_v = receiver - image
@@ -74,4 +75,4 @@ if check_reflection == 0:
 else:
     print('Invalid reflection. Point does not intersect the wall:    ' + str(check_reflection))
 
-# Hello
+    # Hello
