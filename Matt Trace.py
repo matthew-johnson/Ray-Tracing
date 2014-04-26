@@ -12,6 +12,12 @@ Wall1 = [P, Q, R]
 # Integer to define how accurate we want the calc to be. Might need to be adjusted based on units being used like ft vs cm
 round_number = 4
 
+# Check var for if reflection exists
+valid_reflection = False
+
+# List of valid reflection times
+valid_time = []
+
 
 #Creating vectors from the points.
 PQ = np.array(Q - P)
@@ -40,8 +46,8 @@ print 'Image position = ' + str(image)
 
 image_v = receiver - image
 print 'Distance from image to receiver = ' + str(image_v)
-print PQ
-print PR
+print('Vector 1: ' + str(PQ))
+print('Vector 2: ' + str(PR))
 
 
 #Solving for the intersection point of the line from image to receiver and the plane PQR. http://en.wikipedia.org/wiki/Line%E2%80%93plane_intersection
@@ -59,7 +65,7 @@ B = np.array([
 x = np.linalg.solve(A, B)
 print x
 intersect_mag = x[0]
-print intersect_mag
+print('Intersection_matt mag: ' + str(intersect_mag))
 
 
 # Alternate solution to intersection point http://mathworld.wolfram.com/Line-PlaneIntersection.html
@@ -82,9 +88,21 @@ print 'Matt Intersection: ' + str(intersect_matt)
 #If the determinant below is = 0, then the three vectors are linearly dependent meaning the line does not intersect the plane and the reflection is not valid.
 for intersect in [intersect_matt, intersect_nathan]:
     print(str(intersect) + ':')
-    check_reflection = np.dot(intersect - Q, n)
-    print 'Distance = ' + str(check_reflection)
-    if check_reflection == 0:
-        print 'Valid reflection.'
+    # This only checks if the point lies within the infinite plane PQR
+    is_orthogonal = np.dot(intersect - Q, n)
+    if is_orthogonal == 0:
+        if np.linalg.norm(intersect - PR) <= np.linalg.norm(PR) and np.linalg.norm(intersect - PQ) <= np.linalg.norm(PQ):
+            print 'Valid reflection.'
+            valid_reflection = True
+        else:
+            print('Invalid Reflection. Not in Finite Plane')
     else:
-        print('Invalid reflection. Point does not intersect the wall:    ' + str(check_reflection))
+        print('Invalid reflection. Not in Infinite Plane: ')
+
+if valid_reflection == True:
+    ray_1 = intersect_nathan - source
+    ray_2 = receiver - intersect_nathan
+    distance = np.linalg.norm(ray_1) + np.linalg.norm(ray_2)
+    time = distance / 1130
+    valid_time.append(time)
+    print('Time: ' + str(time))
